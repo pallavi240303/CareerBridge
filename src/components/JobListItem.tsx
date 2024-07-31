@@ -2,9 +2,10 @@
 import { Job } from "@prisma/client";
 import Image from "next/image";
 import companyLogoPlaceholder from "@/assets/company-logo-placeholder.png";
-import { Banknote, Briefcase, Clock, Globe2, MapPin } from "lucide-react";
+import { Banknote, Briefcase, Clock, Globe2, MapPin, X } from "lucide-react";
 import { formatMoney, relativeDate } from "@/lib/utils";
 import Badge from "./Badge";
+import Link from "next/link";
 interface JobListItemProps {
   job: Job;
 }
@@ -39,6 +40,7 @@ export default function JobListItem({
             <Briefcase size={16} className="shrink-0" />
             {type}
           </p>
+          
           <p className="flex items-center gap-1.5 ">
             <MapPin size={16} className="shrink-0" />
             {locationType}
@@ -55,6 +57,7 @@ export default function JobListItem({
             <Clock size={16} className="shrink-0" />
             {relativeDate(createdAt)}
           </p>
+          
         </div>
       </div>
       <div className="hidden sm:flex flex-col shrink-0 items-end justify-between">
