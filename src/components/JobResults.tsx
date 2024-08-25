@@ -30,7 +30,6 @@ export default async function JobResults({
         ],
     }
     : {};
-
     const where: Prisma.JobWhereInput = {
         AND: [
             searchFilter,

@@ -5,7 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["fullTextSearch"]
 }
 
@@ -33,4 +33,21 @@ model Job {
   updatedAt        DateTime @updatedAt
 
   @@map("job")
+}
+
+model Alumni {
+  id             Int     @id @default(autoincrement())
+  firstName      String
+  lastName       String
+  email          String  @unique
+  graduationYear Int
+  branch         String
+  contact        Int?
+  linkedinUrl    String 
+  currentJobRole String
+  currentCompany String
+  twitterUrl     String?
+  githubUrl      String?
+
+  @@map("alumni")
 }

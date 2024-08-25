@@ -15,7 +15,10 @@ export default function Navbar() {
             />
             <span className="text-xl font-bold tracking-tight">Career Bridge</span>
         </Link>
-        <Button asChild>
+        <Button asChild className="bg-white p-2 text-black outline font-bold hover:text-white">
+            <Link href="/alumni">Connect with Alumni</Link>
+        </Button>
+        <Button asChild >
             <Link href="/jobs/new">Post a Job</Link>
         </Button>
       </nav>

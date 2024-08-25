@@ -1,7 +1,7 @@
 "use server"
 
 import { toSlug } from "@/lib/utils";
-import { createJobSchema } from "@/lib/validation";
+import { createJobSchema , createAlumniSchema } from "@/lib/validation";
 import {nanoid} from "nanoid";
 import {put} from "@vercel/blob";
 import path from "path";
@@ -60,3 +60,4 @@ export async function createJobPosting(formData: FormData){
 
     redirect("/job-submitted");
 }
+

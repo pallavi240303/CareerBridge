@@ -9,7 +9,6 @@ interface PageProps {
     params: {slug: string}
 }
 
-
 const getJob = cache(async (slug: string) => {
     const job = await prisma.job.findUnique({
         where: {slug}
@@ -28,9 +27,7 @@ export async function generateStaticParams(){
     })
     return jobs.map(({slug}) => slug);
     //made the slug fetch from dynamic to static so it doesnt take time to load the and fetch the info instead it fetches al the relevant slug at the time of build and then uses the cached slug.
-    
     //This function fetches all approved job entries from the database and extracts their slugs to use them as static parameters, improving the performance of dynamic routes by pre-generating them at build time.
-    
     //if a new job is added, it wont be shown in the site without recompiling the static site.So , Re-run the build process to regenerate the static paths with the updated data.
 }
 
