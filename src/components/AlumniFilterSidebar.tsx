@@ -32,7 +32,7 @@ interface AlumniFilterSidebarProps {
 
 export default async function AlumniFilterSidebar({ defaultValues }: AlumniFilterSidebarProps) {
   return (
-    <aside className="roundedlg attack sticky top-0 mt-5 h-fit border bg-background p-4  md:w-[260px]">
+    <aside className="roundedlg attack  top-0 mt-5 h-fit border bg-background p-4  md:w-[260px]">
       <form action={filterAlumni} key={JSON.stringify(defaultValues)}>
         <div className="space-y-4">
           <div className="flex flex-col gap-2">
