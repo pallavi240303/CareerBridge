@@ -56,12 +56,11 @@ export default async function AlumniResults({
             ) : (
                 <>
                     {alumni.map((alumnus) => (
-                        <Link key={alumnus.id} href={`/alumni/${alumnus.id}`} passHref>
-                            <div className="block">
-                                <AlumniListItem alumni={alumnus} />
-                            </div>
-                        </Link>
+                        <div key={alumnus.id} className="block">
+                            <AlumniListItem alumni={alumnus} />
+                        </div>
                     ))}
+
                     <Pagination
                         currentPage={page}
                         totalPages={Math.ceil(totalResults / alumniPerPage)}

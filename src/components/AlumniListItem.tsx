@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Alumni } from "@prisma/client";
 import { Briefcase, Linkedin, Twitter, Github, Mail, Book, Phone } from "lucide-react";
 import { Button } from './ui/button';
+import Link from 'next/link';
 
 interface AlumniListItemProps {
   alumni: Alumni;
@@ -44,35 +46,27 @@ export default function AlumniListItem({
           </p>
           <p className="flex items-center gap-1.5">
             <Phone size={16} className="shrink-0" />
-            Contact: {contact ? contact : "Not Provided"}
+            Contact: {contact || "Not Provided"}
           </p>
         </div>
       </div>
       <div className="flex gap-2 flex-col mr-7">
-        <a href={`mailto:${email}`} className="">
-            <Button variant="outline" className="p-4 rounded-full bg-primary/90 text-white hover:outline">
-              <Mail size={16} />
-            </Button>
+        <a href={`mailto:${email}`} className="p-4 rounded-full bg-primary/90 text-white hover:outline">
+            <Mail size={16} />
         </a>
         {linkedinUrl && (
-          <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="p-4 rounded-full bg-primary/90 text-white hover:outline">
-              <Linkedin size={16} />
-            </Button>
+          <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-primary/90 text-white hover:outline">
+            <Linkedin size={16} />
           </a>
         )}
         {twitterUrl && (
-          <a href={twitterUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="p-4 rounded-full bg-primary/90 text-white hover:outline">
-              <Twitter size={16} />
-            </Button>
+          <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-primary/90 text-white hover:outline">
+            <Twitter size={16} />
           </a>
         )}
         {githubUrl && (
-          <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="p-4 rounded-full bg-primary/90 text-white hover:outline">
-              <Github size={16} />
-            </Button>
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="p-4 rounded-full bg-primary/90 text-white hover:outline">
+            <Github size={16} />
           </a>
         )}
       </div>
